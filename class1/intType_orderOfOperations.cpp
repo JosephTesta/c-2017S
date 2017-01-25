@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdint> //C++11 feature to make data types protrable
+//#include <cstdint> //C++11 feature to make data types protrable
 using namespace std;
 
 int x; //global variables are automatically binary 0. still should initalize
