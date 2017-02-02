@@ -13,18 +13,21 @@ using namespace std;
 int main() {
 	double rOriginal = 1;
 	double r = 1;
-	int n;
+	double n;
 	double PI = 3.14159265;
 
-	while(true){
-		cout << "Enter n for number circumscribes" << endl;
-		cin >> n;
-		r = 1;
-		for(n; n >= 3; n--){
-			r = r/(cos(PI/n));
+	
+	r = 1;
+	cout << "for n=" << "1" << ": " << r << endl;
+	for(n=3; n <= 1000000; n++){
+		r = r/(cos(PI/n));
+		if (n==10 || n==100 || n==1000 || n== 10000 || n==100000 || n==1000000) {
+			cout << "for n=" << n << ": " << r << endl;
 		}
-		cout << r << endl;
 	}
+	
+
+	
 
     return 0;
     //exit(0); is another option

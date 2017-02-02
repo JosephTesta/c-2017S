@@ -6,12 +6,13 @@
 */
 
 #include <iostream>
+#include <cstdint>
 using namespace std;
 
 
 int main() {
-	double inputNumber = 0;
-	double factorial = 1;
+	int inputNumber = 0;
+	int64_t factorial = 1;
 	cout << "enter a number to solve factorial: " << endl;
 	cin >> inputNumber;
 	while(inputNumber >= 1) { 

@@ -31,4 +31,15 @@ int main() {
      *
      */
 
+    for (int i = 100; i > 2; i/=2+1) // 100
+        if (i % 2 ==0)
+            cout << i << endl;
+
+    float a = 70.0001;
+    float b = 70.0000;
+    cout << a-b << endl;
+    bool c = true;
+    cout << false << c << endl;
+    float d = 70.0001;
+    cout << d << endl;
 }

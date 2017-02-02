@@ -11,13 +11,19 @@ using namespace std;
 
 int main() {
 
-	double sumOfSquares = 0;
-	for(double a = 1; a <= 100000; a++){
+	float sumOfSquares = 0;
+	for(float a = 1; a <= 100000; a++){
 		sumOfSquares += 1/(a*a);
+	}
+
+		float sumOfSquares2 = 0;
+	for(float a = 100000; a >= 1; a--){
+		sumOfSquares2 += 1/(a*a);
 	}
 	
 
-	cout << sqrt(6*sumOfSquares) << endl;
+	cout << "Sum forward gives: " << sqrt(6*sumOfSquares) << endl;
+	cout << "Sum backwards gives: " << sqrt(6*sumOfSquares2) << endl;
 
     return 0;
     //exit(0); is another option

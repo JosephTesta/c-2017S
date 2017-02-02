@@ -26,7 +26,7 @@ int main() {
     cout << 2 + 3 * 4 << '\n'; // order of operations 14
     cout << 2 / 3 * 3 + 1 / 2 * 2 << '\n';
     cout << 2 * 3 / 3 + 1 * 2 / 2 << '\n';
-
+    cout << 3 * 2 / 3 + 1 << '\n';
 
 
 }

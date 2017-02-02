@@ -6,13 +6,13 @@
 */
 
 #include <iostream>
-#include <cmath>
+#include <string>
 using namespace std;
 
 int main() {
 
 	int n;
-	string thisString;
+	string thisString = "";
 	cout << "enter an integer" << endl;
 	cin >> n;
 

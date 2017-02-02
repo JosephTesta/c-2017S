@@ -13,5 +13,18 @@ int main() {
 		thisline >> x >> y >> z;
 		cout << x << "," << y << "," << z << '\n';
 	}
+
+    if(!stream1) {
+		cout << "While opening a file an error is encountered" << endl;
+    }
+
+    else {
+                cout << "File is successfully opened" << endl;
+    }
+
+    while(!stream1.eof()) {
+		stream1 >> a;
+		cout << a << endl;
+    }
   return 0;
 }

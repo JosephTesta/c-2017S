@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int x = 0;
+	while (x < 10) {
+		cout << x << ' ';
+		x++;
+	}
+
+	int n;
+	do {
+		cin >> n;
+	} while (n < 5 || n > 19);
+
+
+}
