@@ -1,3 +1,10 @@
+/**
+  hw4b - JulianDate
+  Joe Testa
+
+  I worked in collaboration (yet coded individually) with Robert Fea, Brian Silver, Vin Cangiarella, and John Martin
+*/
+
 /*
 	365 days in a year
 	LEAP YEAR: any year divisible by 4 --> LEAP
@@ -14,6 +21,8 @@ https://en.wikipedia.org/wiki/Julian_day
 http://aa.usno.navy.mil/faq/docs/JD_Formula.php
 Look it up, cite it, feel free to use it.  Just make it object oriented.
  */
+
+//formulas from http://aa.usno.navy.mil/faq/docs/JD_Formula.php
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -23,7 +32,8 @@ class JulianDate {
 private:
 	double jday;
 public:
-    JulianDate(int year, int month, int day, int hour = 0, int min = 0, int sec = 0) : jday(JD(year,month,day,hour,min,sec)) {}
+    JulianDate(int year, int month, int day, int hour = 0, int min = 0, int sec = 0) : jday(JD(year,month,day,hour,min,sec)) {
+    }
 
     JulianDate(double date) : jday(date) {}
 
@@ -33,7 +43,7 @@ public:
         double K = day + - 0.5 + hour/24.0 + min/(24.0*60.0) + sec/(24.0*60.0*60.0);
         double JDay = K-32075+1461*(I+4800+(J-14)/12)/4+367*(J-2-(J-14)/12*12)/12-3*((I+4900+(J-14)/12)/100)/4;
         JDay -= 2451544.5;
-        cout << "jday is: " << JDay << endl;
+        //cout << "jday is: " << JDay << endl;
         return JDay;
     }
 
@@ -127,47 +137,35 @@ public:
 };
 
 int main() {
+    const JulianDate d1(2017, 2, 13, 20, 00, 00);
+    const JulianDate d1b(2017, 2, 13, 22, 00, 00);
 
-	//use his main
-	
-	const JulianDate d1(2017, 2, 13, 20, 00, 00);
-	const JulianDate d1b(2017, 2, 13, 22, 00, 00);
-	int year2 = d1b.getYear();
-	int year3 = d1.getYear();
-	cout << year3 << ' ' << year2 << endl;
-	
-	cout << d1b - d1 << '\n'; // 2 hours = 2/24 day
+    cout << d1b - d1 << '\n'; // 2 hours = 2/24 day
 
-	const JulianDate tomorrow = d1 + 1; 
-	cout << tomorrow.getDay() << endl;
-	
-	cout << tomorrow; // 2017 2 14 20 00 00
+    const JulianDate tomorrow = d1 + 1;
+    cout << tomorrow; // 2017 2 14 20 00 00
+    cout << tomorrow - d1 << '\n';
+    // hh:mm:ss  20/24  20/24.0
+    const JulianDate d2(2017, 2, 19); // 00:00:00
+  const JulianDate d3 = d2 + 3; // what is it 3 days later?
+    double days   = d3 - d1;
 
-	cout << tomorrow - d1 << '\n';
-	// hh:mm:ss  20/24  20/24.0 
-	
-	const JulianDate d2(2017, 2, 19); // 00:00:00
-  	const JulianDate d3 = d2 + 3; // what is it 3 days later?
-	double days   = d3 - d1;
-
-	int year = d3.getYear();
-	int month = d3.getMonth();
-	int day = d3.getDay();
-	int hour = d3.getHour();
-	int min = d3.getMin();
-	int sec = d3.getSec();
-	cout << d1 << '\n';
-	cout << d2 << '\n';
-	cout << d3 << '\n';
-	cout << year << " " << month << " " << day <<
-		hour << " " << min << " " << sec << '\n';
-	// Not every operation makes sense!
-	//	JulianDate d5 = d3 * d1;
-		
-	JulianDate torture(2017, 2, 27); // 00:00:00
-	for (int i = 0; i < 3; i++) {
-		cout << torture.getYear() << " " << torture.getMonth() << " " << torture.getDay() << '\n';
-		torture = torture + 1;
-	}
-	
+    int year = d3.getYear();
+    int month = d3.getMonth();
+    int day = d3.getDay();
+    int hour = d3.getHour();
+    int min = d3.getMin();
+    int sec = d3.getSec();
+    cout << d1 << '\n';
+    cout << d2 << '\n';
+    cout << d3 << '\n';
+    cout << year << " " << month << " " << day <<
+        hour << " " << min << " " << sec << '\n';
+    // Not every operation makes sense!
+    //  JulianDate d5 = d3 * d1;
+    JulianDate torture(2017, 2, 27); // 00:00:00
+    for (int i = 0; i < 3; i++) {
+        cout << torture.getYear() << " " << torture.getMonth() << " " << torture.getDay() << '\n';
+        torture = torture + 1;
+    }
 }

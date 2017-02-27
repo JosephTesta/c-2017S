@@ -1,3 +1,10 @@
+/**
+  hw3c - Robot Location Estimator
+  Joe Testa
+
+  I worked in collaboration (yet coded individually) with Robert Fea, Brian Silver, Vin Cangiarella, and John Martin
+*/
+
 #include <iostream>
 #include <cmath>
 #define _USE_MATH_DEFINES

@@ -1,3 +1,10 @@
+/**
+  hw4a - Bitmap
+  Joe Testa
+
+  I worked in collaboration (yet coded individually) with Robert Fea, Brian Silver, Vin Cangiarella, and John Martin
+*/
+
 /*
 00000000000000000000000000000000000
 00000000000000000000000000000000000

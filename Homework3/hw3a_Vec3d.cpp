@@ -1,3 +1,10 @@
+/**
+  hw3a - Vec3D
+  Joe Testa
+
+  I worked in collaboration (yet coded individually) with Robert Fea, Brian Silver, Vin Cangiarella, and John Martin
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -38,7 +45,7 @@ public:
 		b = this->x * a.x + this->y * a.y + this->z * a.z;
 		return b;
 	}
-	
+
 	//This doesn't need const at all?
 	friend Vec3d operator+(Vec3d a, Vec3d b) {
 		return Vec3d(a.x + b.x, a.y + b.y, a.z + b.z);

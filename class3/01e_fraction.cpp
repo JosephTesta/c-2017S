@@ -31,7 +31,11 @@ public:
 };
 
 
+
+
+
 int main() {
+
 	const Fraction a(1,2); //you would need const in a different place as well. by the void print
 	//Fraction a(1,2); //this will make a fraction 1/2
 	Fraction b(3); // 3/1

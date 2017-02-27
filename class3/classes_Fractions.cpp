@@ -47,12 +47,12 @@ public:
 
 	encapsulation: hiding the details of an object internally (private)
 */
-
+/*
 void Fraction::print() const
 {
 	cout << num << "/" << den;
 }
-
+*/
 int main() {
 	const Fraction a(1,2); //you would need const in a different place as well. by the void print
 	//Fraction a(1,2); //this will make a fraction 1/2

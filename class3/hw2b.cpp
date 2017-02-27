@@ -20,13 +20,18 @@ public:
 		return name;
 	}
 
-	static int getMemberCount() {
+	static int getCount(){
+		return count;
+	}
+
+	int getMemberCount() {
 		return count;
 	}
 
 	friend ostream& operator <<(ostream& s, const Person& p) {//can have Person p or const Person& p which copies a person. faster. you want to write to a stream and change it. the stream isn't const
 		return s << p.name << " " << p.age;
 	}
+
 };
 
 int Person::count = 0; //inside class person there is count and it is zero.
