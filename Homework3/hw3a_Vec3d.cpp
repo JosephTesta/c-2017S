@@ -8,6 +8,7 @@
 #include <iostream>
 using namespace std;
 
+#if 1
 class Vec3d {
 private:
 	double x, y, z;
@@ -64,7 +65,50 @@ public:
 Vec3d operator*(double a, Vec3d b) {
 	return Vec3d(a*b.x, a*b.y, a*b.z);
 }
+#endif
 
+#if 0
+//Practice by redoing this hw. This way is probably better in terms of using consts when possible
+class Vec3d {
+private:
+	double x,y,z;
+public:
+	Vec3d(double x = 0, double y = 0, double z = 0) : x(x),y(y),z(z) {}
+	friend ostream& operator <<(ostream& s, const Vec3d& a) {
+		return s << a.x << ' ' << a.y << ' ' << a.z << endl;
+	}
+
+	friend Vec3d operator +(const Vec3d& a, const Vec3d& b) {
+		return Vec3d(a.x+b.x, a.y+b.y, a.z+b.z);
+	}
+
+	double dot(const Vec3d& a) const {
+		return x*a.x + y*a.y + z*a.z;
+	}
+
+	Vec3d add(const Vec3d& a) const;
+
+	Vec3d operator *(double num) const {
+		Vec3d a(x*num,y*num,z*num);
+		return a;
+	}
+
+	friend Vec3d operator *(double num, const Vec3d& a);
+
+};
+
+
+//you can separate out friend functions or even methods.
+Vec3d operator *(double num, const Vec3d& a) {
+	return Vec3d(a.x*num, a.y*num, a.z*num);
+}
+
+Vec3d Vec3d::add(const Vec3d& a) const {
+	return Vec3d(a.x+x, a.y+y, a.z+z);
+}
+
+
+#endif
 
 int main() {
 	const Vec3d a(1.0, 2, 2.5); //(1.0, 2.0, 2.5) (x,y,z)
@@ -82,3 +126,4 @@ int main() {
 	Vec3d f = 2 * a;   //scalar multiplication
 	cout << f << '\n';
 }
+

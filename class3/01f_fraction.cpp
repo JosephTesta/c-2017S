@@ -12,13 +12,15 @@ public:
 	friend ostream& operator <<(ostream& s, Fraction f) {
 		s << f.num << "/" << f.den;
 		return s;
-	Fraction add(Fraction a, Fraction b);
+	}
+	friend Fraction add(Fraction a,Fraction b);
 
 
 };
 
-Fraction add(Fraction a, Fraction b) {
-	return Fraction ans(a.num * b.den + a.den * b.num, a.den * b.den);
+Fraction add(Fraction a,Fraction b){
+	Fraction ans(a.num * b.den + a.den * b.num, a.den * b.den);
+	return ans;
 }
 
 int main() {
@@ -27,6 +29,7 @@ int main() {
 	Fraction b(3); // 3/1
 	Fraction c; // 1/1 --> 0/1 these are reasonable choice for unitialized 
 	cout << a << ' ' << b << '\n';
-	Fraction d = a.add(b);
-	Fraction d = a + b;
+	Fraction d = add(a,b);
+	//Fraction d = a + b;
 }
+

@@ -8,9 +8,9 @@ using namespace std;
 class Person {
 private:
 	string fName, lName;
-	uint65_t phone;
+	uint64_t phone;
 public:
-	Person(const string& fName, const string& lName, uint65_t phone) : fName(fName), lName(lName), phone(phone) {} //use cont string& since a string can potentiall be long
+	Person(const string& fName, const string& lName, uint64_t phone) : fName(fName), lName(lName), phone(phone) {} //use cont string& since a string can potentiall be long
 
 	friend ostream& operator <<(ostream& s, const Person& p) {//reference for person also speeds up a little
 		return s << p.fName << " " << p.lName << " " << p.phone;
@@ -18,11 +18,8 @@ public:
 };
 
 
-
 int main() {
 	ofstream f("phonebook.txt")
 	Person p("Dov", "Kruger", 2012165605)
 	f << p;
-
-
 }

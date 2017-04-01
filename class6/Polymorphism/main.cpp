@@ -34,7 +34,7 @@ int main() {
 	p = &b;
 	cout << p->payToll() << '\n';
 
-	Vehicle* array[5]; //hav an array of 5 things which are each pointer to a vehicle. An array of pointers
+	Vehicle* array[5]; //array of pointers
 	array[0] = &c1;
 	array[1] = &b;
 	array[2] = &b;
@@ -43,7 +43,7 @@ int main() {
 	//this way has to make run time decisions and check
 
 	for (int i=0; i < 2; i++)
-		cout << array[i]->payToll();
+		cout << array[i]->payToll() << endl;
 
 	//c1.drive();
 	//s1.drive();
