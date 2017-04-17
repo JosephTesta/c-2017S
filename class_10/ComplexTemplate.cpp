@@ -50,11 +50,11 @@ public:
 	}
 
 	friend Complex<Precision> operator +(Complex<Precision> a, Complex<Precision> b) {
-		return Complex<Precision>(a.real+b.real, a.imag+b.imag);
+		return Complex(a.real+b.real, a.imag+b.imag); //works here with or without Complex<Precision> since it is constructor
 	}
 
 	friend Complex<Precision> operator -(Complex<Precision> a, Complex<Precision> b) { //friend on inside
-		return Complex<Precision>(a.real - b.real, a.imag - b.imag);
+		return Complex(a.real - b.real, a.imag - b.imag);//works here with or without Complex<Precision> since it is constructor
 	}
 
 	friend ostream& operator <<(ostream& s, const Complex<Precision>& c) {

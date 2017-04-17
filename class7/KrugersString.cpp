@@ -2,6 +2,17 @@
 #include <cstdint>
 using namespace std;
 
+
+#if 0
+char* the_string : I can change the char to which the_string points, and I can modify the char at which it points.
+
+const char* the_string : I can change the char to which the_string points, but I cannot modify the char at which it points.
+
+char* const the_string : I cannot change the char to which the_string points, but I can modify the char at which it points.
+
+const char* const the_string : I cannot change the char to which the_string points, nor can I modify the char at which it points.
+#endif
+
 class String {
 private:	
 	char* p;
