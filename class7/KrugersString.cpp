@@ -78,10 +78,95 @@ int main() {
 	s3 = s5;
 	s3 = s3;
 	s2 = s3 = s4;
+	s2 = s2 = s5;
+	cout << s2 << endl;
 
 	int x = 2;
 	int y = 3;
 	int z = 4;
-
-
 }
+
+#if 0
+//my attempt at templating it. seems to work fine
+
+template<typename T>
+class String {
+private:
+	int capacity;
+	int len;
+	T* p;
+public:
+	String() : capacity(0), len(0), p(nullptr){
+	}
+
+	String(const T a[]) {
+		int i = 0;
+		for (i; a[i]!= '\0';i++) {
+		}
+		len = i;
+		capacity = i;
+		p = new T[capacity];
+		for (int j = 0; j < capacity; j++){
+			p[j] = a[j];
+		}
+	}
+
+	~String() {
+		delete [] p;
+	}
+
+	String(const String& orig) : capacity(orig.capacity), len(orig.len), p(new T[len]) {
+		for(int i = 0; i <len;i++)
+			p[i] = orig.p[i];
+	}
+
+	String& operator =(const String& orig) {
+		if(this != &orig) {
+			delete [] p;
+			len = orig.len;
+			capacity = orig.capacity;
+			p = new T[len];
+			for(int i = 0; i <len;i++)
+				p[i] = orig.p[i];
+		}
+			return *this;
+	}
+
+	void set(int x, T a) {
+		p[x] = a;
+	}
+
+	friend ostream& operator <<(ostream& s, const String<T>& a) {
+		for(int i = 0 ; i < a.len; i++)
+			s << a.p[i];
+		return s;
+	}
+
+};
+
+int main() {
+	String<char> s1("This is a test");
+	String<char> s2;
+	cout << s1 << "\n";
+
+	String<char> s3 = s1;
+	String<char> s4 (s1);
+	s1.set(0, 'x');
+	cout << s1 << endl; //changed
+	cout << s3 << endl; //unchanged
+	cout << s4 << endl; //unchanged
+
+	String<char> s5("Yoho!");
+	cout << s5 << endl;
+	s3 = s5;
+	s3 = s3;
+	s2 = s3 = s4;
+	s2 = s2 = s5;
+	cout << s2 << endl;
+
+	int x = 2;
+	int y = 3;
+	int z = 4;
+}
+
+#endif

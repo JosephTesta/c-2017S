@@ -106,4 +106,5 @@ int main() {
   cout << b << '\n';
   c = f(b);
   cout << b << '\n';
+  cout << c << '\n';
 }
